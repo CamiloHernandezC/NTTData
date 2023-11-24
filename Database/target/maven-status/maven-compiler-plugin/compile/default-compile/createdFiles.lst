@@ -1,0 +1,5 @@
+com\camilo\database\repositories\ProductRepository.class
+com\camilo\database\DatabaseApplication.class
+com\camilo\database\repositories\UserRepository.class
+com\camilo\database\entities\User.class
+com\camilo\database\entities\Product.class

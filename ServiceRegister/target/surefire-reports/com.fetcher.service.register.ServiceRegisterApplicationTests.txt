@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.fetcher.service.register.ServiceRegisterApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.345 s - in com.fetcher.service.register.ServiceRegisterApplicationTests

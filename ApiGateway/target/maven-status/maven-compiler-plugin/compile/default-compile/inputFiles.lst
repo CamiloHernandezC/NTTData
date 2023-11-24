@@ -1,0 +1,6 @@
+C:\Users\USUARIO\Documents\Projects\ApiGateway\src\main\java\com\fetcher\api\gateway\config\RoutesConfig.java
+C:\Users\USUARIO\Documents\Projects\ApiGateway\src\main\java\com\fetcher\api\gateway\ApiGatewayApplication.java
+C:\Users\USUARIO\Documents\Projects\ApiGateway\src\main\java\com\fetcher\api\gateway\filters\AuthenticationFilter.java
+C:\Users\USUARIO\Documents\Projects\ApiGateway\src\main\java\com\fetcher\api\gateway\exceptions\JwtTokenMalformedException.java
+C:\Users\USUARIO\Documents\Projects\ApiGateway\src\main\java\com\fetcher\api\gateway\exceptions\JwtTokenMissingException.java
+C:\Users\USUARIO\Documents\Projects\ApiGateway\src\main\java\com\fetcher\api\gateway\utils\JwtUtil.java

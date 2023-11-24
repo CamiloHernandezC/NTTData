@@ -1,0 +1,6 @@
+com\fetcher\api\gateway\config\RoutesConfig.class
+com\fetcher\api\gateway\ApiGatewayApplication.class
+com\fetcher\api\gateway\filters\AuthenticationFilter.class
+com\fetcher\api\gateway\utils\JwtUtil.class
+com\fetcher\api\gateway\exceptions\JwtTokenMissingException.class
+com\fetcher\api\gateway\exceptions\JwtTokenMalformedException.class

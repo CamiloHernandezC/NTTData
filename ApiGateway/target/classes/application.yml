@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ApiGateway
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka 
+
+jwt:
+  secret: MjkzRDY2QUU3NDEzMUZFQUFCQ0M1Q0MwMkREODJFMUFCRTQ4QzFGQUU1RDhBQ0RGNTFBQTA3M0UyODE0NDFGNA==
