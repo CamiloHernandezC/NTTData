@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "bbd06bc9-2239-4460-92df-1d1e3e736ab6",
+		"name": "NTT DATA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17012390"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.to.have.status(200)) {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    if (responseBody.hasOwnProperty(\"access_token\")) {\r",
+							"        pm.globals.set(\"globalAccessToken\", responseBody.access_token);\r",
+							"\r",
+							"        console.log(\"Token guardado en la variable global: \" + pm.globals.get(\"globalAccessToken\"));\r",
+							"    } else {\r",
+							"        console.log(\"No se encontró el campo 'access_token' en la respuesta.\");\r",
+							"    }\r",
+							"} else {\r",
+							"    console.log(\"La respuesta no fue exitosa. Código de respuesta: \" + responseCode);\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "camilo",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "username",
+						"value": "camilo",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{globalAccessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{globalAccessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/products?priceGreaterThan=2000&priceLessThan=6000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "priceGreaterThan",
+							"value": "2000"
+						},
+						{
+							"key": "priceLessThan",
+							"value": "6000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{globalAccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"nuevo producto\",\r\n        \"description\": \"descripcion nuevo producto\",\r\n        \"imagePath\": \"img/new_product.png\",\r\n        \"price\": 10000.0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
